@@ -4,9 +4,14 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:training_flutter_budget_app/transaction_create_screen.dart';
 import 'package:training_flutter_budget_app/transaction.dart';
 
-class TransactionListScreen extends StatelessWidget {
+class TransactionListScreen extends StatefulWidget {
   TransactionListScreen({super.key});
 
+  @override
+  State<TransactionListScreen> createState() => _TransactionListScreenState();
+}
+
+class _TransactionListScreenState extends State<TransactionListScreen> {
   var transactionList = [
     Transaction(1, 'Mẹ cho', 30, '08/04/2023'),
     Transaction(2, 'Ba cho', 40, '09/04/2023'),
@@ -74,9 +79,7 @@ class TransactionListScreen extends StatelessWidget {
                     title: Text(transaction.description),
                     subtitle: Text(transaction.date),
                     trailing: IconButton(
-                      onPressed: () {
-                      
-                      },
+                      onPressed: () {},
                       icon: Icon(
                         Icons.delete,
                         color: Colors.red,
@@ -90,5 +93,4 @@ class TransactionListScreen extends StatelessWidget {
       ),
     );
   }
-
 }
